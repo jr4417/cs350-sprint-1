@@ -1,0 +1,23 @@
+{% extends "layout2.html"  %}
+
+{% block content %}
+
+<h1>My Library Thus Far</h1>
+<table border="1" style="width:100%">
+    <tr><th>Title</th><th>Publisher</th>
+        <th>Genre</th><th>Weight</th><th>Released</th><th>Site</th></tr>
+{% for game in games %}
+
+<tr><td>{{game[0]}}</td>
+    <td>{{game[1]}}</td>
+    <td>{{game[2]}}</td>
+    <td>{{game[3]}}</td>
+    <td>{{game[4]}}</td>
+    <td>{{game[5]}}</td>
+    <td>{{game[6]}}</td></tr>
+{% endfor %}
+</table>
+
+
+
+{% endblock %}

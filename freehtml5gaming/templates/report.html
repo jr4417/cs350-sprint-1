@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+        <h1>Report an Abduction</h1>
+<form method = "post" action = "/addGame">
+					<table>
+					<tr><td>Title</td><td><input type="text" id="Title" name="Title" /></td></tr>
+					<tr><td>Game Maker</td><td><input type="text" id="gameMaker" name="gameMaker" /></td></tr>
+					<tr><td>Year Released</td><td><input type="number" name="yearReleased" size="3"/>
+
+					
+					<tr><td>Designer</td><td>
+					
+					<select name="designer">
+					<option>AL</option>
+					<option>AK</option>
+					<option>AS</option>
+					<option>AZ</option>
+					<option>CA</option>
+					<option>NM</option>
+					<option>TX</option>
+					<option>VA</option>
+					</select></td></tr>
+					
+					<tr><td>How Heavy</td><td>lite filler <input type="range" name="scary" min="1" max="10" step="1" value="5"/>beast</td></tr>
+					<tr><td>Genre</td><td>&nbsp;</td></tr>
+					<tr><td><input type="checkbox" name="thematic" value="checked" /> Thematic</td><td><input type="checkbox" name="war" value="checked" /> War Game</td></tr>
+					<tr><td><input type="checkbox" name="sciFi" value="checked" /> Sci Fi</td><td><input type="checkbox" name="euro" value="checked" /> Euro</td></tr>
+					<tr><td>&nbsp;</td><td><input type="submit" value="Report Abduction" /></td></tr>
+					</table>
+					
+					</form>
+{% endblock %}

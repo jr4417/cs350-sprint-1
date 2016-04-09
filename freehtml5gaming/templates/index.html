@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>I Love Games!!</h1>
+    <p>I sure hope this works</p>
+    <span class="center"><img src="static/images/someonesgames.jpg" height=400 width=500 alt="&quot;I wish mine were this organized&quot;" /></span>
+    {% if willU %}
+    <p>We will be playing <b>{{game}}</b></p>
+    {% else %}
+    <p> As usual we won't play this week</p>
+    {% endif %}
+{% endblock %}

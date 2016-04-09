@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+        <h1>Add a Game</h1>
+<form method = "POST" action = "{{url_for('addTo')}}">
+					<table>
+					<tr><td>Title</td><td><input type="text" id="Title" name="Title" /></td></tr>
+					<tr><td>Site</td><td><input type="text" id="Site" name="Site" /></td></tr>
+					<tr><td>Year Released</td><td><input type="number" id = "Released" name="Released" size="3"/>
+
+					
+					<tr><td>Publisher</td><td>
+					
+					<select id = "Publisher" name="Publisher">
+					<option>Fantasy Flight</option>
+					<option>Strong Forge</option>
+					<option>GMT</option>
+					</select></td></tr>
+					
+					<tr><td>How Heavy</td><td>lite filler <input type="range" id="Weight" name="Weight" min=1 max=10 step=1 value=5 />beast</td></tr>
+					<tr><td>Genre</td><td>&nbsp;</td></tr>
+					<tr><td><input type="checkbox" id = "Genre" name="Genre" value="Thematic" /> Thematic</td><td><input type="checkbox" id = "Genre" name="Genre" value="War Game" /> War Game</td></tr>
+					<tr><td><input type="checkbox" id = "Genre" name="Genre" value="Sci Fi" /> Sci Fi</td><td><input type="checkbox" id = "Genre" name="Genre" value="Euro" /> Euro</td></tr>
+					<tr><td>&nbsp;</td><td><input type="submit" value="Add Game" /></td></tr>
+					</table>
+					
+					</form>
+{% endblock %}

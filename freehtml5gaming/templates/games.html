@@ -1,0 +1,13 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+<h1>I Love Games!!</h1>
+    {% for game in games %}
+    <p><b><u>{{game.name}}</u></b></p>
+    <p>Publisher: <b>{{game.pub}}</b></p>
+    <p>Website: <a href={{game.site}}>{{game.pub}}</a></p>
+    <img src={{game.pic}} height=400 width=500 />
+    {% endfor %}
+ 
+{% endblock %}
