@@ -10,7 +10,7 @@ appChat = Flask(__name__, static_url_path='')
 appChat.config['SECRET_KEY'] = 'secret!'
 
 def connectToDB():
-    connectionString = 'dbname=gamesdb user=gamer1 password = 1234 host = localhost'
+    connectionString = 'dbname=gamesdb user=postgres password = 1234 host = localhost'
     print connectionString
     try:
         return psycopg2.connect(connectionString)
@@ -66,12 +66,27 @@ def showChart():
     conn = connectToDB()
     cur = conn.cursor()
     try:
-        cur.execute("SELECT Title, Publisher, Genre, Weight, Released, Site FROM games")
+        cur.execute("SELECT title FROM games;")
+        results0 = cur.fetchall()
+        cur.execute("SELECT publisher FROM games;")
+        results1 = cur.fetchall()
+        cur.execute("SELECT genre FROM games;")
+        results2 = cur.fetchall()
+        cur.execute("SELECT released FROM games;")
+        results3 = cur.fetchall()
+        cur.execute("SELECT playtime FROM games;")
+        results4 = cur.fetchall()
+
     except:
         print("Error executing select")
+        
+    print results0[0][0]
+ #   print results1[0][0]
+ #   print results2[0][0]
+ #   print results3[0][0]
+ #   print results4[0][0]
    
-    results = cur.fetchall()
-    return render_template('list_games.html', games=results)
+    return render_template('list_games.html', games = results0, pubs = results1, gens = results2, rels = results3, playTimes = results4)
 
 #app.config['SECRET_KEY'] = 'secret!'
 
@@ -179,9 +194,9 @@ def searchData(searchTerm):
 
 
 
-@appChat.route('/chat')
+@app.route('/chat')
 def startChat():
-    return render_template('chat.html')
+     return render_template('chat.html')
     
   
 
@@ -192,6 +207,6 @@ def startChat():
 
 # start the server
 if __name__ == '__main__':
-        socketio.run(app, host=os.getenv('IP', '0.0.0.1'), port =int(os.getenv('PORT', 8080)), debug=False)
+        #socketio.run(app, host=os.getenv('IP', '0.0.0.1'), port =int(os.getenv('PORT', 8080)), debug=False)
         app.debug=True
         app.run(host='0.0.0.0', port=8080)

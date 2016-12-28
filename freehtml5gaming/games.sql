@@ -1,5 +1,7 @@
-CREATE EXTENSION pgcrypto;
+DROP DATABASE IF EXISTS gamesdb;
+CREATE DATABASE gamesdb;
 \c gamesdb
+CREATE EXTENSION pgcrypto;
 
 CREATE TABLE games (    title text,
                         publisher varchar,
@@ -22,14 +24,13 @@ INSERT INTO rooms (username, roomname, subs) VALUES('first', 'Public', 'first');
 
 
 
-
+INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Dust', 'Dust Games', 'Miniatures', '2007', 240 );
 INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Dropzone Commander 2 Player Starter Set', 'Hawk Wargames', 'Miniatures', '2013', 120 );
 INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Duel of Ages II', 'Worldspanner', 'Adventure', '2013', 150 );
 INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Dungeon Twister 2: Prison', 'Asmodee', 'Adventure', '2009', 60 );
 INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('DungeonQuest Revised Edition', 'Arclight', 'Adventure', '2014', 60 );
 INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Dungeons & Dragons: Castle Ravenloft Board Game', 'Wizards of the Coast', 'Adventure', '2010', 60 );
 INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Dungeons & Dragons: The Legend of Drizzt Board Game', 'Wizards of the Coast', 'Adventure', '2011', 60 );
-INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Dust', 'Dust Games', 'Miniatures', '2007', 240 );
 INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Earth Reborn', 'Ludically', 'Adventure', '2010', 180 );
 INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Eclipse', 'Lautapelit.fi', 'Civilization', '2011', 200 );
 INSERT INTO games ( title, publisher, genre, released, playtime) VALUES('Eclipse: Rise of the Ancients', 'Asmodee', 'Civilization', '2012', 120 );
